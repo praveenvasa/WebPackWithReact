@@ -1,7 +1,12 @@
+const webpack = require('webpack');
 module.exports = {
     entry: './src/index.js',
     module: {
         rules: [
+          {
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader'],
+          },
           {
             test: /\.(js|jsx)$/,
             exclude: /node_modules/,
@@ -17,7 +22,11 @@ module.exports = {
       publicPath: '/',
       filename: 'bundle.js'
     },
+    plugins: [
+      new webpack.HotModuleReplacementPlugin()
+    ],
     devServer: {
-      contentBase: './dist'
+      contentBase: './dist',
+      hot: true
     }
   };
