@@ -1,5 +1,5 @@
 import React from 'react';
-//import loader from '../containers/loader.gif';
+import loader from '../containers/loader.gif';
 
 const TaskData = (props) => {
   console.log(props.data)
@@ -36,7 +36,7 @@ const TaskData = (props) => {
       </div> : null;
   }
   else {
-    part = <div>loading</div>
+    part = <div><img src={loader} alt="LOADING"/></div>
   }
 
   return (
