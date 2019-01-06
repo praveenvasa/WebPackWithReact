@@ -1,5 +1,7 @@
 import { put, takeLatest, all } from 'redux-saga/effects';
 import * as actionTypes from '../constants/actionTypes';
+require('es6-promise').polyfill();
+require('isomorphic-fetch');
 
 function* takeData(action){
 
